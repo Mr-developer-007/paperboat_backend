@@ -1,9 +1,10 @@
 import express from "express";
-import { loginAdmin, verifyAdmin, verifyOtpAdmin } from "../../controller/admin/AuthController";
+import { loginAdmin, logoutAdmin, verifyAdmin, verifyOtpAdmin } from "../../controller/admin/AuthController";
 import { AdminVerify } from "../../middlewere/adminVerify";
 const routes = express.Router();
 
 routes.get("/admin",AdminVerify as any,verifyAdmin as any )
+routes.get("/admin/logout",AdminVerify as any,logoutAdmin as any )
 
 routes.post("/login",loginAdmin)
 

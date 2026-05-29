@@ -42,11 +42,15 @@ const articleSchema = new Schema<IArticle>({
       required: true,
       trim: true,
     },
-    featuredImage: {
-      type: String,
-      required: true,
+ category:{
+         type: String,
+         required:true
     },
-    editor: {
+
+ readingTime: {
+      type: Number, 
+    },
+ editor: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "editor",
       required: true,
@@ -57,22 +61,31 @@ const articleSchema = new Schema<IArticle>({
         trim: true,
       },
     ],
+
+
+
       status: {
       type: String,
       enum: ["draft", "published", "archived"],
       default: "draft",
     },
+
+
      views: {
       type: Number,
       default: 0,
     },
-     readingTime: {
-      type: Number, 
+    featuredImage: {
+      type: String,
+      required: true,
     },
-    category:{
-         type: String,
-         required:true
-    },
+   
+
+
+
+
+    
+   
  fulldis:[
     {
         title:{ type:String},

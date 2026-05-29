@@ -158,3 +158,26 @@ const admin = req.admin
 
 
 
+export const logoutAdmin = async( req: AdminAuth,res: Response,next: NextFunction)=>{
+try {
+  res
+      .status(200)
+      .clearCookie("admin", {
+        httpOnly: true,
+        expires: new Date(0),
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "strict",
+      })
+      .json({
+        success: true,
+        message: "Admin logout successfully",
+      });
+
+
+} catch (error) {
+  next(error)
+}
+
+}
+
+
