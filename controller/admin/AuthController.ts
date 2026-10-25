@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express"
 import Admin from "../../model/adminModel"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import { redisClient } from "../../helper/redis"
 import { sendOTP } from "../../helper/sendOtp"
 import JWT from "jsonwebtoken"

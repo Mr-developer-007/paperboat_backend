@@ -1,6 +1,6 @@
 import type {NextFunction, Request, Response} from "express"
 import Editor from "../../model/editorModel";
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 export interface EditorAuth extends Request{
     editor :any

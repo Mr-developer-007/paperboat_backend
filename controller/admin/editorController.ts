@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import { sendCredentials } from "../../helper/sendMail";
 import Editor from "../../model/editorModel";
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 
 export const CreateEditor = async (req: Request, res: Response, next: NextFunction) => {
   try {
